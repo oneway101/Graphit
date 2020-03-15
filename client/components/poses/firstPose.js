@@ -9,7 +9,7 @@ const Box = posed.div({
   },
   big: {
     width: 30,
-    height: 75,
+    height: 175,
     backgroundColor: ({c}) => c
   }
 })
@@ -26,7 +26,7 @@ class Example extends React.Component {
         this.setState(state => ({
           size: state.size === 'small' ? 'big' : 'small'
         })),
-      500
+      1200
     )
     setInterval(
       () =>
@@ -34,7 +34,7 @@ class Example extends React.Component {
           color:
             state.color === '#ededed' ? 'rgba(138, 185, 255, 1)' : '#ededed'
         })),
-      520
+      2320
     )
   }
 

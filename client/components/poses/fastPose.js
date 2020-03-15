@@ -4,7 +4,7 @@ import React from 'react'
 const Box = posed.div({
   small: {
     width: 30,
-    height: 150,
+    heigh: 55,
     backgroundColor: ({c}) => c
   },
   big: {
@@ -36,7 +36,7 @@ class Example2 extends React.Component {
               ? '#ededed'
               : 'rgba(69, 103, 178, 1)'
         })),
-      2550
+      3550
     )
   }
 

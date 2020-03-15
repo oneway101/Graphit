@@ -3,13 +3,13 @@ import React from 'react'
 
 const Box = posed.div({
   small: {
-    width: 50,
-    height: 100,
+    width: 30,
+    height: 45,
     backgroundColor: ({c}) => c
   },
   big: {
-    width: 50,
-    height: 100,
+    width: 30,
+    height: 85,
     backgroundColor: ({c}) => c
   }
 })
@@ -26,7 +26,7 @@ class Example3 extends React.Component {
         this.setState(state => ({
           size: state.size === ' big' ? 'small' : 'big'
         })),
-      2000
+      1900
     )
     setInterval(
       () =>

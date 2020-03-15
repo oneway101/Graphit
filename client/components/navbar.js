@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
@@ -14,18 +14,19 @@ const Navbar = ({handleClick, isLoggedIn}) => (
     spacing={2}
   >
     <Grid item>
+      <Link to="/">Home</Link>
       {isLoggedIn ? (
-        <Grid item>
+        <Fragment>
           <Link to="/profile">My Charts</Link>
           <a href="#" onClick={handleClick}>
             Logout
           </a>
-        </Grid>
+        </Fragment>
       ) : (
-        <Grid item>
+        <Fragment>
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
-        </Grid>
+        </Fragment>
       )}
     </Grid>
   </Grid>
