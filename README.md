@@ -1,6 +1,6 @@
 ### 📊📈📉 Graphit is a platform that transforms uploaded data from a non-technical user to “magically” produce the most appropriate graph in seconds 📊📈📉
 
-Visit: https://graphit-demo.herokuapp.com// 👀
+Visit: https://graphit-demo.herokuapp.com 👀
 
 Graphit was built by a team of 4 software engineering students as part of the immersive Grace Hopper Program at Fullstack Academy of Code, in New York City.
 
