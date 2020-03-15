@@ -4,12 +4,12 @@ import React from 'react'
 const Box = posed.div({
   small: {
     width: 30,
-    height: 50,
+    height: 40,
     backgroundColor: ({c}) => c
   },
   big: {
     width: 30,
-    height: 175,
+    height: 145,
     backgroundColor: ({c}) => c
   }
 })

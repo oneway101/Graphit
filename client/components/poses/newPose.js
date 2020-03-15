@@ -9,7 +9,7 @@ const Box = posed.div({
   },
   big: {
     width: 30,
-    height: 225,
+    height: 175,
     backgroundColor: ({c}) => c
   }
 })
