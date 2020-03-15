@@ -12,7 +12,6 @@ class Pose extends Component {
       <div className="animationContainer">
         <Example />
         <Example2 />
-        <Example5 />
         <Example6 />
         <Example4 />
         <Example />
@@ -21,6 +20,7 @@ class Pose extends Component {
         <Example6 />
         <Example3 />
         <Example />
+        <Example5 />
         <Example2 />
         <Example4 />
         <Example3 />
@@ -36,8 +36,8 @@ class Pose extends Component {
         <Example3 />
         <Example4 />
         <Example6 />
-        <Example5 />
         <Example />
+        <Example5 />
         <Example />
       </div>
     )

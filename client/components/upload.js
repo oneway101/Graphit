@@ -6,7 +6,11 @@ import {gotParsedData, gotColumns} from '../store/data'
 import {gotUploadedFile} from '../store/upload'
 import {Button, Grid, Paper} from '@material-ui/core'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faUpload} from '@fortawesome/free-solid-svg-icons'
+import {faUpload, faFileCsv} from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios'
+
+const DEMO_TYPE_1 = 'DEMO_TYPE_1'
+const DEMO_TYPE_2 = 'DEMO_TYPE_2'
 
 class Upload extends React.Component {
   constructor() {
@@ -16,13 +20,29 @@ class Upload extends React.Component {
     }
   }
 
+  requestDemoData = async event => {
+    let url = ''
+    switch (event) {
+      case DEMO_TYPE_1:
+        url = '/worldhappiness.csv'
+        break
+      case DEMO_TYPE_2:
+        url = '/superbowlstats.csv'
+        break
+      default:
+        break
+    }
+    // read csv from URL location
+    const {data} = await axios.get(url)
+    this.handleFileUpload(data)
+  }
+
   handleFileUpload = event => {
-    const file = event.target.files[0]
+    const file = event.target ? event.target.files[0] : event
     this.setState({
       uploadedFile: file
     })
     this.props.uploadFile(file)
-
     this.parseUploadedFile(file)
   }
 
@@ -55,6 +75,7 @@ class Upload extends React.Component {
           justify="center"
           alignItems="center"
           spacing={2}
+          className="main"
         >
           <Grid item className="header" sm={12}>
             <Logo />
@@ -80,6 +101,29 @@ class Upload extends React.Component {
                 Choose File
               </Button>
             </label>
+          </Grid>
+          <hr />
+          <Grid item className="demo-header" sm={12}>
+            <h4>Would you like to see the demo?</h4>
+            <h4>Try our sample files:</h4>
+          </Grid>
+          <Grid item sm={12} className="fa-btn">
+            <Grid container justify="center" alignItems="center" spacing={2}>
+              <Grid className="demo-csv">
+                <Button
+                  onClick={event => this.requestDemoData(DEMO_TYPE_1, event)}
+                >
+                  <FontAwesomeIcon icon={faFileCsv} size="3x" />World Happiness
+                </Button>
+              </Grid>
+              <Grid item className="demo-csv">
+                <Button
+                  onClick={event => this.requestDemoData(DEMO_TYPE_2, event)}
+                >
+                  <FontAwesomeIcon icon={faFileCsv} size="3x" />Superbowl Stats
+                </Button>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Paper>

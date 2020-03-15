@@ -4,12 +4,12 @@ import React from 'react'
 const Box = posed.div({
   small: {
     width: 30,
-    height: 200,
+    height: 85,
     backgroundColor: ({c}) => c
   },
   big: {
     width: 30,
-    height: 50,
+    height: 150,
     backgroundColor: ({c}) => c
   }
 })
@@ -26,7 +26,7 @@ class Example6 extends React.Component {
         this.setState(state => ({
           size: state.size === 'small' ? 'big' : 'small'
         })),
-      1900
+      1700
     )
     setInterval(
       () =>
@@ -36,7 +36,7 @@ class Example6 extends React.Component {
               ? '#ededed'
               : 'rgba(69, 103, 178, 1)'
         })),
-      900
+      1200
     )
   }
 
